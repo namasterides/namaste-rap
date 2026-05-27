@@ -6,42 +6,38 @@ export type Episode = {
   guestRole: string;
   duration: string;
   releaseDate: string;
-  artworkInitials: string;
-  artworkBg: string;
+  youtubeId: string;
 };
 
 export const episodes: Episode[] = [
   {
-    id: "ep-47",
-    number: 47,
-    title: "Trap Houses to Penthouses",
-    guest: "Big Mello",
-    guestRole: "Atlanta MC, Founder of GoldChain Records",
-    duration: "1h 18m",
-    releaseDate: "May 21, 2026",
-    artworkInitials: "BM",
-    artworkBg: "from-[#3a2418] to-[#1a0f08]",
+    id: "ep-01",
+    number: 1,
+    title: "Will Rap For Food Show EP. 1",
+    guest: "Tom G & Chef LeeLee",
+    guestRole: "Tampa MC & In-Studio Chef",
+    duration: "Episode 1",
+    releaseDate: "Watch on YouTube",
+    youtubeId: "Lq5oLUudoXM",
   },
   {
-    id: "ep-46",
-    number: 46,
-    title: "The Producer Who Doesn't Sleep",
-    guest: "Kaze",
-    guestRole: "Producer, Sample Architect",
-    duration: "54m",
-    releaseDate: "May 14, 2026",
-    artworkInitials: "KZ",
-    artworkBg: "from-[#1a2638] to-[#0b1320]",
+    id: "wrff-commercial",
+    number: 2,
+    title: "The Social Media Commercial",
+    guest: "Will Rap For Food",
+    guestRole: "Official Podcast Trailer",
+    duration: "Trailer",
+    releaseDate: "Watch on YouTube",
+    youtubeId: "4YohmDp6RMY",
   },
   {
-    id: "ep-45",
-    number: 45,
-    title: "Bars Over Branding",
-    guest: "Jay Reign",
-    guestRole: "Brooklyn Lyricist, Indie Label Operator",
-    duration: "1h 02m",
-    releaseDate: "May 7, 2026",
-    artworkInitials: "JR",
-    artworkBg: "from-[#2a1a2a] to-[#120912]",
+    id: "wrff-challenge-beat",
+    number: 3,
+    title: "#WillRapForFoodChallenge",
+    guest: "Free Instrumental",
+    guestRole: "Beat drop — rap it, post it, tag us",
+    duration: "Instrumental",
+    releaseDate: "Watch on YouTube",
+    youtubeId: "YtYXC_D_Sd0",
   },
 ];

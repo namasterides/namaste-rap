@@ -106,9 +106,9 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right pinned logo card */}
+        {/* Right pinned cover card */}
         <motion.div
-          initial={{ opacity: 0, rotate: -8, y: 20 }}
+          initial={{ opacity: 0, rotate: -6, y: 20 }}
           animate={{ opacity: 1, rotate: -2, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="lg:col-span-5 flex justify-center lg:justify-end"
@@ -116,15 +116,17 @@ export default function Hero() {
           <div className="relative">
             {/* "Pin" */}
             <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary z-10 ring-2 ring-background" />
-            <div className="relative bg-surface border border-border p-3 sm:p-4 w-65 sm:w-85 aspect-square">
-              <div className="relative w-full h-full overflow-hidden border border-border bg-[#0f0f0f]">
+            {/* Soft glow */}
+            <div className="absolute -inset-4 bg-primary/10 blur-2xl rounded-full pointer-events-none" />
+            <div className="relative bg-surface border border-border p-3 sm:p-4 w-72 sm:w-96 lg:w-104">
+              <div className="relative w-full aspect-3/2 overflow-hidden border border-border bg-[#0f0f0f]">
                 <Image
-                  src="/logo.png"
-                  alt="Will Rap For Food"
+                  src="/hero-right-image.jpg"
+                  alt="Will Rap For Food podcast cover"
                   fill
                   priority
-                  sizes="(max-width: 640px) 260px, 340px"
-                  className="object-contain p-3"
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 380px, 416px"
+                  className="object-cover"
                 />
               </div>
               <p className="font-accent text-secondary text-center text-xl sm:text-2xl mt-3 -mb-1 leading-none">

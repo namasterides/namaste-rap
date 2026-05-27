@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Play, Clock, Calendar } from "lucide-react";
+import Image from "next/image";
 import { episodes } from "@/lib/episodes";
 
 export default function FeaturedEpisodes() {
@@ -25,10 +26,12 @@ export default function FeaturedEpisodes() {
             </h2>
           </div>
           <a
-            href="#"
+            href="https://www.youtube.com/results?search_query=will+rap+for+food+podcast"
+            target="_blank"
+            rel="noreferrer"
             className="text-foreground/80 hover:text-primary transition-colors text-sm uppercase tracking-[0.2em] self-start sm:self-end"
           >
-            View all 47 →
+            View all on YouTube →
           </a>
         </motion.div>
 
@@ -43,33 +46,44 @@ export default function FeaturedEpisodes() {
           className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6"
         >
           {episodes.map((ep) => (
-            <motion.article
+            <motion.a
               key={ep.id}
+              href={`https://youtu.be/${ep.youtubeId}`}
+              target="_blank"
+              rel="noreferrer"
               variants={{
                 hidden: { opacity: 0, y: 24 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
               }}
-              className="group relative bg-surface border border-border hover:border-primary transition-colors duration-300 overflow-hidden"
+              className="group relative block bg-surface border border-border hover:border-primary transition-colors duration-300 overflow-hidden"
             >
               {/* Watermark number */}
-              <div className="absolute -right-4 -top-8 font-display text-[180px] leading-none text-foreground/[0.04] select-none pointer-events-none">
-                #{ep.number}
+              <div className="absolute -right-4 -top-8 font-display text-[180px] leading-none text-foreground/4 select-none pointer-events-none z-10">
+                #{String(ep.number).padStart(2, "0")}
               </div>
 
-              {/* Artwork */}
-              <div className={`relative aspect-square w-full bg-gradient-to-br ${ep.artworkBg} border-b border-border flex items-center justify-center`}>
-                <span className="font-display text-[88px] leading-none text-foreground/30 tracking-wider">
-                  {ep.artworkInitials}
-                </span>
-                <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.25em] text-foreground/60 font-semibold">
-                  EP {String(ep.number).padStart(3, "0")}
+              {/* YouTube Thumbnail */}
+              <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-[#0f0f0f]">
+                <Image
+                  src={`https://img.youtube.com/vi/${ep.youtubeId}/hqdefault.jpg`}
+                  alt={ep.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                {/* Vignette */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
+
+                <div className="absolute top-3 left-3 text-[10px] uppercase tracking-[0.25em] text-foreground/90 font-semibold bg-background/60 backdrop-blur-sm px-2 py-1 border border-border">
+                  EP {String(ep.number).padStart(2, "0")}
                 </div>
-                <button
-                  aria-label={`Play ${ep.title}`}
-                  className="absolute bottom-4 right-4 w-12 h-12 rounded-md bg-primary text-background flex items-center justify-center group-hover:scale-105 transition-transform"
+
+                <div
+                  aria-hidden
+                  className="absolute bottom-3 right-3 w-12 h-12 rounded-md bg-primary text-background flex items-center justify-center group-hover:scale-105 transition-transform shadow-lg"
                 >
                   <Play className="w-5 h-5 fill-current" />
-                </button>
+                </div>
               </div>
 
               <div className="relative p-6">
@@ -92,7 +106,7 @@ export default function FeaturedEpisodes() {
                   </span>
                 </div>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </motion.div>
       </div>

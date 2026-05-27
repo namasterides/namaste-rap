@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   { label: "Episodes", href: "#episodes" },
@@ -29,9 +30,15 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-5 sm:px-8 h-16 flex items-center justify-between">
-        <Link href="/" className="font-display text-3xl tracking-wide leading-none flex items-baseline">
-          <span>WRFF</span>
-          <span className="text-primary text-4xl leading-none ml-0.5">.</span>
+        <Link href="/" className="flex items-center gap-2 leading-none">
+          <Image
+            src="/logo.png"
+            alt="Will Rap For Food"
+            width={140}
+            height={56}
+            priority
+            className="h-10 sm:h-11 w-auto"
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
