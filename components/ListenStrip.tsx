@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const platforms = [
-  { name: "Spotify", href: "#" },
-  { name: "Apple Podcasts", href: "#" },
+  { name: "Spotify", href: "https://open.spotify.com/show/1H2V42a1Fa3ZxsPd5RsKLi?si=501346df70864911" },
+  { name: "Apple Podcasts", href: "https://podcasts.apple.com/us/podcast/will-rap-for-food-podcast/id1896789740" },
   { name: "YouTube Music", href: "#" },
-  { name: "Amazon Music", href: "#" },
+  { name: "Amazon Music", href: "https://music.amazon.com/podcasts/f8381529-4c80-4322-bed3-40dfc72e93ec/will-rap-for-food-podcast" },
   { name: "Overcast", href: "#" },
 ];
 

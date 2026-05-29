@@ -9,10 +9,10 @@ const siteLinks = [
 ];
 
 const platforms = [
-  { label: "Spotify", href: "#" },
-  { label: "Apple Podcasts", href: "#" },
+  { label: "Spotify", href: "https://open.spotify.com/show/1H2V42a1Fa3ZxsPd5RsKLi?si=501346df70864911" },
+  { label: "Apple Podcasts", href: "https://podcasts.apple.com/us/podcast/will-rap-for-food-podcast/id1896789740" },
   { label: "YouTube Music", href: "#" },
-  { label: "Amazon Music", href: "#" },
+  { label: "Amazon Music", href: "https://music.amazon.com/podcasts/f8381529-4c80-4322-bed3-40dfc72e93ec/will-rap-for-food-podcast" },
   { label: "Overcast", href: "#" },
 ];
 
