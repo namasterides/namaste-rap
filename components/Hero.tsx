@@ -29,7 +29,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.05 }}
             className="text-primary text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold mb-6"
           >
-            Episode 47 — Out Now
+            Episode 1 — Out Now
           </motion.p>
 
           <h1 className="font-display text-foreground leading-[0.85] uppercase">
