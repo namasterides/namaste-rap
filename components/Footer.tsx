@@ -4,7 +4,7 @@ import Link from "next/link";
 const siteLinks = [
   { label: "Episodes", href: "#episodes" },
   { label: "Guests", href: "#guests" },
-  { label: "Merch", href: "#" },
+  { label: "Merch", href: "#shop" },
   { label: "Contact", href: "#" },
 ];
 

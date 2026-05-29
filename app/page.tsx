@@ -5,6 +5,7 @@ import FeaturedEpisodes from "@/components/FeaturedEpisodes";
 import Manifesto from "@/components/Manifesto";
 import Hosts from "@/components/Hosts";
 import GuestCTA from "@/components/GuestCTA";
+import Shop from "@/components/Shop";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Manifesto />
         <Hosts />
         <GuestCTA />
+        <Shop />
         <Newsletter />
       </main>
       <Footer />
