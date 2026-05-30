@@ -6,6 +6,7 @@ export type Product = {
   tag?: "New Drop" | "Limited" | "Best Seller" | "Fan Fave";
   description: string;
   colors: string[];
+  image?: string;
 };
 
 export const products: Product[] = [
@@ -18,6 +19,7 @@ export const products: Product[] = [
     description:
       "Classic heavyweight tee with the iconic WRFF logo screenprinted on the chest. Available in S–3XL.",
     colors: ["#1a1a1a", "#E85D2C", "#F4E4C1"],
+    image: "/IMG_3929.PNG",
   },
   {
     id: "no-pr-scripts-hoodie",
@@ -40,6 +42,17 @@ export const products: Product[] = [
     colors: ["#0A0A0A", "#E85D2C"],
   },
   {
+    id: "wrff-wristband",
+    name: "WRFF Wristband",
+    price: 10,
+    category: "Accessories",
+    tag: "Fan Fave",
+    description:
+      "Silicone wristband repping the podcast loud. Durable, flexible, and 100% sauce.",
+    colors: ["#E85D2C"],
+    image: "/IMG_3927.PNG",
+  },
+  {
     id: "sticker-pack-vol1",
     name: "Sticker Pack Vol. 1",
     price: 12,
@@ -57,6 +70,7 @@ export const products: Product[] = [
     description:
       "Flat-brim snapback with woven patch logo and adjustable back closure. One size fits.",
     colors: ["#161616", "#E85D2C"],
+    image: "/IMG_3928.PNG",
   },
   {
     id: "wrff-tote",

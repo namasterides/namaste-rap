@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { hosts } from "@/lib/hosts";
 
@@ -53,11 +54,21 @@ export default function Hosts() {
                 }}
                 className="group bg-surface border border-border hover:border-primary transition-colors duration-300"
               >
-                <div className={`relative aspect-[4/3] w-full bg-gradient-to-br ${h.gradient} border-b border-border overflow-hidden`}>
+                <div className={`relative aspect-3/4 w-full bg-linear-to-br ${h.gradient} border-b border-border overflow-hidden`}>
                   <div className="absolute inset-0 grayscale group-hover:grayscale-0 transition-[filter] duration-500 flex items-center justify-center">
-                    <span className="font-display text-[120px] sm:text-[160px] leading-none text-foreground/15 tracking-widest">
-                      {initials}
-                    </span>
+                    {h.image ? (
+                      <Image
+                        src={h.image}
+                        alt={h.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    ) : (
+                      <span className="font-display text-[120px] sm:text-[160px] leading-none text-foreground/15 tracking-widest">
+                        {initials}
+                      </span>
+                    )}
                   </div>
                   <div className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.25em] text-foreground/60 font-semibold">
                     Host

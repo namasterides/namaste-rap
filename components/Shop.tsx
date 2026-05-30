@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShoppingBag, Tag } from "lucide-react";
 import { products, type Product } from "@/lib/products";
@@ -79,22 +80,31 @@ export default function Shop() {
               }}
               className="group relative bg-surface border border-border hover:border-primary transition-colors duration-300 overflow-hidden flex flex-col"
             >
-              {/* Placeholder Image Area */}
+              {/* Image Area */}
               <div
                 className={`relative aspect-square w-full overflow-hidden bg-linear-to-br ${categoryGradient[product.category]} border-b border-border flex items-center justify-center`}
               >
-                {/* Watermark category text */}
-                <span className="absolute -right-3 -bottom-4 font-display text-[100px] leading-none text-foreground/5 select-none pointer-events-none uppercase">
-                  {product.category.slice(0, 3)}
-                </span>
-
-                {/* Center icon */}
-                <div className="relative flex flex-col items-center gap-3 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
-                  <ShoppingBag className="w-16 h-16 stroke-1 text-foreground" />
-                  <span className="font-display text-xs uppercase tracking-[0.3em] text-foreground">
-                    {product.category}
-                  </span>
-                </div>
+                {product.image ? (
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  <>
+                    <span className="absolute -right-3 -bottom-4 font-display text-[100px] leading-none text-foreground/5 select-none pointer-events-none uppercase">
+                      {product.category.slice(0, 3)}
+                    </span>
+                    <div className="relative flex flex-col items-center gap-3 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
+                      <ShoppingBag className="w-16 h-16 stroke-1 text-foreground" />
+                      <span className="font-display text-xs uppercase tracking-[0.3em] text-foreground">
+                        {product.category}
+                      </span>
+                    </div>
+                  </>
+                )}
 
                 {/* Category badge */}
                 <div className="absolute top-3 left-3 text-[10px] uppercase tracking-[0.25em] text-foreground/80 font-semibold bg-background/60 backdrop-blur-sm px-2 py-1 border border-border">
