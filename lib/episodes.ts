@@ -40,4 +40,14 @@ export const episodes: Episode[] = [
     releaseDate: "Watch on YouTube",
     youtubeId: "YtYXC_D_Sd0",
   },
+  {
+    id: "ep-04",
+    number: 4,
+    title: "Episode 2",
+    guest: "Will Rap For Food",
+    guestRole: "YouTube Video",
+    duration: "Episode 2",
+    releaseDate: "Watch on YouTube",
+    youtubeId: "YB10f-CTORM",
+  },
 ];
